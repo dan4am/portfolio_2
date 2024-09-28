@@ -31,8 +31,20 @@ class AreaOfCompetence(BaseModel):
     name: str
     compentences:List[Competence]
 
+class Language(BaseModel):
+    name: str
+    Level: int
+    
+class Certificate(BaseModel):
+    date: int
+    desc: str
+    url: str
+    
 class Portfolio:
-    area_of_compentences: Set[AreaOfCompetence]
+    areas_of_expertise: Set[AreaOfCompetence]
     education: Set[Education]
     professional_experiences: Set[ProfessionalExperience]
-    volunteering: Set[Volunteering]
+    languages: Set[Education]
+    volunteering: Set[Volunteering] = None
+    certificates: Set[Certificate] = None
+
